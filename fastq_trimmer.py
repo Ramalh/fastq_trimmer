@@ -42,7 +42,7 @@ for file in files:
     with open(file) as f:
         for i in range(count):
             meta = f.readline()[:-1]
-            seq = f.readline()
+            seq = list(f.readline())
             f.readline()
             q = list(f.readline()[:-1])
             b, e = 0, 0
@@ -58,14 +58,15 @@ for file in files:
                     e = j+3
                     break
             q = q[b:e]
-            
+            seq = seq[b:e]
             if middle:
                 for j in range(0, len(q)//3+1, 3):
                     if sum(map(qual, q[j:j+3]))/3 < threshold:
-                        q[j:j+3] = ["-", "-", "-"]
+                        seq[j:j+3] = ["-", "-", "-"]
             q = "".join(q)
+            seq = "".join(seq)
             print(meta)
-            print(seq[b:e])
+            print(seq)
             print("+")
             print(q)
 
