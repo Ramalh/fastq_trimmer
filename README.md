@@ -2,3 +2,5 @@
 Trim the bases based on q-score
 
 Lower quality bases in the middle can be replaced by "-"
+
+If there is no file, example.fastq file can be used
