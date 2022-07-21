@@ -43,7 +43,7 @@ for file in files:
         for i in range(count):
             meta = f.readline()[:-1]
             seq = list(f.readline())
-            f.readline()
+            meta_2 = f.readline()
             q = list(f.readline()[:-1])
             b, e = 0, 0
             
@@ -67,6 +67,6 @@ for file in files:
             seq = "".join(seq)
             print(meta)
             print(seq)
-            print("+")
+            print(meta_2)
             print(q)
 
